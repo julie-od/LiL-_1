@@ -3,135 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LtL - Real help for the default parent</title>
+    <title>SoftWave Vitality | Non-Invasive Pain Relief Therapy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap');
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f9f9f7;
-            color: #333;
-            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+            color: #5a5a5a;
+            background-color: #f8f5f0;
         }
-        .serif {
-            font-family: 'Lora', serif;
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: #5a7d5a;
         }
-        .dropdown-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(248,245,240,0.9) 0%, rgba(230,235,225,0.9) 100%);
         }
-        .dropdown-content.show {
-            max-height: 1000px;
-            transition: max-height 0.5s ease-in;
+        
+        .treatment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
-        .fade-in {
-            animation: fadeIn 0.8s ease forwards;
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        
+        .nav-link:hover {
+            color: #6b8e6b;
         }
-        .hover-grow {
-            transition: all 0.3s ease;
-        }
-        .hover-grow:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        .rotate-180 {
-            transform: rotate(180deg);
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-        }
+        
         .btn-primary {
-            background-color: #1f2937;
             transition: all 0.3s ease;
+            background-color: #6b8e6b;
         }
+        
         .btn-primary:hover {
-            background-color: #111827;
             transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background-color: #5a7d5a;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
-        .btn-secondary {
-            background-color: transparent;
-            border: 2px solid white;
-            transition: all 0.3s ease;
-        }
-        .btn-secondary:hover {
-            background-color: rgba(255,255,255,0.1);
-            transform: translateY(-2px);
-        }
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            margin-bottom: 16px;
-            color: white;
-            font-size: 20px;
-        }
-        .quote-card {
-            position: relative;
-        }
-        .quote-card:before {
-            content: '"';
+        
+        .leaf-decoration {
             position: absolute;
-            top: -10px;
-            left: 10px;
-            font-size: 60px;
-            color: rgba(0,0,0,0.05);
-            font-family: 'Lora', serif;
-            line-height: 1;
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #1f2937;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        .familiar-item {
-            transition: all 0.3s ease;
-        }
-        .familiar-item:hover {
-            transform: translateX(5px);
+            opacity: 0.1;
+            z-index: 0;
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="overflow-x-hidden">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="bg-white shadow-sm fixed w-full z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
-                        <span class="serif text-xl font-bold text-gray-900">LtL</span>
-                    </div>
-                    <div class="hidden md:ml-10 md:flex md:space-x-8">
-                        <a href="#features" class="nav-link text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Features</a>
-                        <a href="#how-it-works" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">How It Works</a>
-                        <a href="#testimonials" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Testimonials</a>
-                        <a href="#waitlist" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Join Waitlist</a>
+                        <span class="text-2xl font-serif text-green-800">SoftWave<span class="font-light">Vitality</span></span>
                     </div>
                 </div>
-                <div class="hidden md:ml-4 md:flex md:items-center">
-                    <button class="btn-primary text-white px-4 py-2 rounded-md text-sm font-medium">
-                        Get Early Access
-                    </button>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#" class="nav-link text-gray-600 hover:text-[#5a7d5a] px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="#treatments" class="nav-link text-gray-600 hover:text-[#5a7d5a] px-3 py-2 rounded-md text-sm font-medium">Treatments</a>
+                    <a href="#gallery" class="nav-link text-gray-600 hover:text-[#5a7d5a] px-3 py-2 rounded-md text-sm font-medium">Gallery</a>
+                    <a href="#testimonials" class="nav-link text-gray-600 hover:text-[#5a7d5a] px-3 py-2 rounded-md text-sm font-medium">Testimonials</a>
+                    <a href="#faq" class="nav-link text-gray-600 hover:text-[#5a7d5a] px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-[#5a7d5a] px-3 py-2 rounded-md text-sm font-medium">Research</a>
+                    <a href="#contact" class="btn-primary text-white px-4 py-2 rounded-md text-sm font-medium">Book Now</a>
                 </div>
                 <div class="-mr-2 flex items-center md:hidden">
                     <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
@@ -141,514 +83,874 @@
                 </div>
             </div>
         </div>
-
+        
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <div class="pt-2 pb-3 space-y-1">
-                <a href="#features" class="block pl-3 pr-4 py-2 border-l-4 border-gray-500 text-base font-medium text-gray-900">Features</a>
-                <a href="#how-it-works" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-900">How It Works</a>
-                <a href="#testimonials" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-900">Testimonials</a>
-                <a href="#waitlist" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-900">Join Waitlist</a>
-            </div>
-            <div class="pt-4 pb-3 border-t border-gray-200">
-                <div class="mt-3 space-y-1">
-                    <button class="block w-full px-4 py-2 text-base font-medium text-center text-white bg-gray-800 rounded-md">
-                        Get Early Access
-                    </button>
-                </div>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Home</a>
+                <a href="#treatments" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Treatments</a>
+                <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Gallery</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Testimonials</a>
+                <a href="#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">FAQ</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Research</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-green-700 hover:bg-green-600">Book Now</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center justify-center px-6 py-20 gradient-bg">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="mb-8">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white text-gray-800 shadow-sm">
-                    Coming Soon • Join the Waitlist
-                </span>
+    <div class="relative pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8 bg-gray-900">
+        <div class="absolute inset-0">
+            <img class="w-full h-full object-cover opacity-50" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Therapist helping patient">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto z-10">
+            <div class="text-center">
+                <h1 class="text-4xl tracking-tight font-serif font-extrabold text-white sm:text-5xl md:text-6xl">
+                    <span class="block">Non-Invasive.</span>
+                    <span class="block text-green-300">Science-Based.</span>
+                    <span class="block">Human-Centered.</span>
+                </h1>
+                <p class="mt-3 max-w-md mx-auto text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                    California's premier SoftWave therapy clinic dedicated to helping you heal without surgery, injections, or downtime.
+                </p>
+                <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+                    <div class="rounded-md shadow">
+                        <a href="#contact" class="btn-primary w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-500 md:py-4 md:text-lg md:px-10">
+                            Book Your First Session
+                        </a>
+                    </div>
+                    <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                        <a href="#contact" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-transparent border-white hover:bg-white hover:bg-opacity-10 md:py-4 md:text-lg md:px-10">
+                            Free Phone Consultation
+                        </a>
+                    </div>
+                </div>
             </div>
-            <h1 class="serif text-5xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight">
-                Real help for the <span class="text-blue-600">default parent</span>.
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-700 mb-10 max-w-2xl mx-auto">
-                Not another to-do list. LtL is a quiet, intelligent assistant designed to take things off your plate — not just organize them.
+        </div>
+        
+        <!-- Leaf decoration -->
+        <div class="leaf-decoration top-0 right-0">
+            <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M200 100C200 155.228 155.228 200 100 200C44.7715 200 0 155.228 0 100C0 44.7715 44.7715 0 100 0C155.228 0 200 44.7715 200 100ZM9.08118 100C9.08118 149.808 50.1918 190.919 100 190.919C149.808 190.919 190.919 149.808 190.919 100C190.919 50.1918 149.808 9.08118 100 9.08118C50.1918 9.08118 9.08118 50.1918 9.08118 100Z" fill="#6b8e6b"/>
+                <path d="M100 190.919C100 190.919 148.5 190.919 148.5 100C148.5 9.08118 100 9.08118 100 9.08118" stroke="#6b8e6b" stroke-width="2"/>
+                <path d="M100 190.919C100 190.919 51.5 190.919 51.5 100C51.5 9.08118 100 9.08118 100 9.08118" stroke="#6b8e6b" stroke-width="2"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Intro Section -->
+    <div class="bg-white py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="text-lg text-gray-600">
+                At SoftWave Vitality, we use FDA-cleared regenerative technology to treat pain at the source. Whether you're recovering from injury or managing chronic discomfort, we're here to help you feel better, faster.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="btn-primary text-white px-8 py-4 rounded-md text-lg font-medium">
-                    Join the Waitlist
-                </button>
-                <button class="bg-white text-gray-800 px-8 py-4 rounded-md text-lg font-medium border border-gray-200 hover-grow">
-                    <i class="fas fa-play-circle mr-2"></i> Watch Demo
-                </button>
-            </div>
-            <div class="mt-12 flex justify-center">
-                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-white shadow-lg flex items-center justify-center">
-                    <div class="absolute inset-0 rounded-full border-8 border-blue-100 animate-pulse"></div>
-                    <div class="text-5xl">
-                        <i class="fas fa-robot text-blue-500"></i>
+        </div>
+    </div>
+
+    <!-- Special Offer Banner -->
+    <div class="bg-green-50 py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-6 sm:p-8 md:flex md:items-center md:justify-between">
+                    <div class="md:w-2/3">
+                        <h3 class="text-xl font-serif font-bold text-[#5a7d5a]">New to SoftWave? Try It for Just $59</h3>
+                        <p class="mt-2 text-gray-600">
+                            Get your initial consultation, personalized mapping session, and first treatment (a $300 value) for only $59. No pressure just results you can feel.
+                        </p>
+                    </div>
+                    <div class="mt-4 md:mt-0 md:ml-8">
+                        <a href="#contact" class="btn-primary w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-700 hover:bg-green-600 md:w-auto">
+                            Book Your First Session
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- What You're Carrying -->
-    <section id="features" class="py-20 px-6 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="serif text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                    A day in the life of the default parent:
+    <!-- What We Treat Section -->
+    <div id="treatments" class="py-12 px-4 sm:px-6 lg:py-16 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center">
+                <h2 class="text-3xl font-serif font-bold text-gray-900 sm:text-4xl">
+                    Conditions We Treat
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    The invisible workload that never ends. LtL helps with all of it.
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                    Specializing in non-invasive treatment for musculoskeletal conditions
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-gray-50 p-8 rounded-xl hover-grow">
-                    <div class="feature-icon bg-blue-500">
-                        <i class="fas fa-calendar-alt"></i>
+            <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Treatment Card 1 -->
+                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 rounded-md p-3 w-12 h-12 flex items-center justify-center">
+                                <img src="https://img.icons8.com/ios/50/3a5a40/human-back.png" alt="Back pain" class="w-8 h-8">
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-serif font-medium text-gray-900">Back Pain</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500">
+                            SoftWave reduces inflammation and restores mobility in cases of chronic lower back pain, herniated discs, and postural strain.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Calendar Management</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Sync school calendars</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Coordinate pickups</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Book sitters</span>
-                        </li>
-                    </ul>
                 </div>
                 
-                <div class="bg-gray-50 p-8 rounded-xl hover-grow">
-                    <div class="feature-icon bg-purple-500">
-                        <i class="fas fa-shopping-basket"></i>
+                <!-- Treatment Card 2 -->
+                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 rounded-md p-3">
+                                <img src="https://img.icons8.com/ios/50/3a5a40/shoulder.png" alt="Shoulder pain" class="w-8 h-8">
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-serif font-medium text-gray-900">Shoulder Pain</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500">
+                            Perfect for rotator cuff injuries, frozen shoulder, and tendonitis. It helps accelerate healing and ease restricted motion.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Household Tasks</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Meal planning & groceries</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Laundry schedules</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Home maintenance</span>
-                        </li>
-                    </ul>
                 </div>
                 
-                <div class="bg-gray-50 p-8 rounded-xl hover-grow">
-                    <div class="feature-icon bg-green-500">
-                        <i class="fas fa-child"></i>
+                <!-- Treatment Card 3 -->
+                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 rounded-md p-3">
+                                <i class="fas fa-walking text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-serif font-medium text-gray-900">Knee Pain</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500">
+                            From arthritis to sports injuries, SoftWave targets joint pain and soft tissue damage with precision.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Childcare</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Activity coordination</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Doctor appointments</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>School communications</span>
-                        </li>
-                    </ul>
+                </div>
+                
+                <!-- Treatment Card 4 -->
+                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 rounded-md p-3">
+                                <i class="fas fa-shoe-prints text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-serif font-medium text-gray-900">Plantar Fasciitis</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500">
+                            SoftWave is FDA-cleared for this condition and has been shown to significantly reduce heel pain within a few treatments.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Treatment Card 5 -->
+                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 rounded-md p-3">
+                                <i class="fas fa-running text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-serif font-medium text-gray-900">Sports Injuries</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500">
+                            Accelerate recovery from muscle strains, ligament injuries, and other sports-related conditions without downtime.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Treatment Card 6 -->
+                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 rounded-md p-3">
+                                <i class="fas fa-hand-paper text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-serif font-medium text-gray-900">Tendonitis / Joint Issues</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500">
+                            Including elbow, wrist, and hip pain by stimulating repair and improving circulation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#contact" class="btn-primary inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-700 hover:bg-green-600">
+                    Schedule a Consultation
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- What Is SoftWave Section -->
+    <div class="py-12 px-4 sm:px-6 lg:py-16 lg:px-8 bg-green-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+                <div>
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 sm:text-4xl">
+                        What Is SoftWave Therapy?
+                    </h2>
+                    <h3 class="text-xl font-medium text-green-700 mt-2">
+                        The Science Behind the Relief
+                    </h3>
+                    <p class="mt-4 text-lg text-gray-600">
+                        SoftWave is a non-invasive therapy that uses acoustic soundwaves to stimulate the body's natural healing process. It increases blood flow, reduces inflammation, and triggers cellular repair helping your body heal itself from the inside out.
+                    </p>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-lg font-serif font-medium text-gray-900">Why It Works:</h4>
+                        <ul class="mt-4 space-y-3">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-600"></i>
+                                </div>
+                                <p class="ml-2 text-gray-600">Stimulates stem cells and tissue regeneration</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-600"></i>
+                                </div>
+                                <p class="ml-2 text-gray-600">FDA-cleared for pain and inflammation</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-600"></i>
+                                </div>
+                                <p class="ml-2 text-gray-600">No needles, no downtime, no drugs</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-600"></i>
+                                </div>
+                                <p class="ml-2 text-gray-600">Safe for chronic and acute injuries</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-12 lg:mt-0">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-serif font-medium text-gray-900">What to Expect:</h3>
+                            <p class="mt-4 text-gray-600">
+                                A typical session takes 15–20 minutes. You'll feel a pulsing sensation during treatment many patients experience immediate relief, while others improve steadily over several sessions.
+                            </p>
+                            <div class="mt-6 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                                <a href="#contact" class="btn-primary flex-1 flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-700 hover:bg-green-600">
+                                    Book a Session
+                                </a>
+                                <a href="#" class="flex-1 flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-green-700 bg-white hover:bg-gray-50">
+                                    Read the Research
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Do Any of These Sound Familiar? -->
-    <section class="py-20 px-6 bg-gray-50">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="serif text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                    Do Any of These Sound Familiar?
+    <!-- About Section -->
+    <div id="about" class="py-12 px-4 sm:px-6 lg:py-16 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+                <div class="order-last lg:order-first">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <h2 class="text-3xl font-serif font-bold text-gray-900">
+                                About Bill
+                            </h2>
+                            <p class="mt-4 text-gray-600">
+                                Bill Weatherford is the founder of SoftWave Vitality, California's only dedicated SoftWave therapy clinic focused exclusively on non-invasive pain relief. After two decades leading sales teams in the pharmaceutical industry, Bill experienced a debilitating shoulder injury that changed everything.
+                            </p>
+                            <p class="mt-4 text-gray-600">
+                                Traditional therapies failed to bring relief until he discovered SoftWave. The transformation was so profound, he left his corporate career behind to help others experience the same kind of healing. His expertise isn't just clinical, it's personal.
+                            </p>
+                            <p class="mt-4 text-gray-600">
+                                Clients often describe Bill as calm, knowledgeable, and nurturing. He's deeply committed to ethical care and won't take on a case unless he's confident it's the right fit. Bill's approach is grounded in evidence-based technology, hands-on anatomy training, and a deep respect for the body's innate ability to recover.
+                            </p>
+                            <div class="mt-6">
+                                <a href="#contact" class="btn-primary inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-700 hover:bg-green-600">
+                                    Meet Bill
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 lg:mt-0">
+                    <div class="relative">
+                        <img class="w-full rounded-lg shadow-md" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Bill Weatherford">
+                        <div class="absolute -bottom-6 -right-6 bg-green-700 rounded-lg shadow-lg p-4 w-2/3">
+                            <h4 class="text-white font-serif font-medium">Certifications & Training</h4>
+                            <ul class="mt-2 space-y-1 text-sm text-green-100">
+                                <li class="flex items-start">
+                                    <i class="fas fa-certificate mt-1 mr-2 text-green-300"></i>
+                                    <span>SoftWave Therapy Certification</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-certificate mt-1 mr-2 text-green-300"></i>
+                                    <span>Penn State Musculoskeletal Studies</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-certificate mt-1 mr-2 text-green-300"></i>
+                                    <span>Advanced Anatomy & Physiology</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="py-12 px-4 sm:px-6 lg:py-16 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center">
+                <h2 class="text-3xl font-serif font-bold text-gray-900 sm:text-4xl">
+                    Our Clinic & Treatments
                 </h2>
-                <p class="text-xl text-gray-600">
-                    You're not alone — here's what other default parents say
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-600 sm:mt-4">
+                    See our facility and SoftWave therapy in action
                 </p>
             </div>
             
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <div class="p-8">
-                    <div class="space-y-6">
-                        <div class="familiar-item flex items-start">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <div>
-                                <p class="text-gray-700">"I feel like I'm the family CEO, but without the salary or vacation days."</p>
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- Gallery Item 1 -->
+                <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Treatment room">
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Therapy session">
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Equipment">
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Patient consultation">
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Clinic exterior">
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Relaxation area">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div id="testimonials" class="py-12 px-4 sm:px-6 lg:py-16 lg:px-8 bg-green-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center">
+                <h2 class="text-3xl font-serif font-bold text-gray-900 sm:text-4xl">
+                    Patient Stories
+                </h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-600 sm:mt-4">
+                    Hear from people who've experienced the SoftWave difference
+                </p>
+            </div>
+            
+            <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card rounded-lg shadow-md overflow-hidden p-6 backdrop-blur-sm">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=80" alt="J.L.">
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-serif font-medium text-gray-900">J.L., Westwood</h3>
+                            <div class="flex mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
                             </div>
                         </div>
-                        
-                        <div class="familiar-item flex items-start">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-4">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <div>
-                                <p class="text-gray-700">"I keep a running list in my head of everything that needs to get done, but no one else seems to notice."</p>
+                    </div>
+                    <blockquote class="mt-4 text-gray-600">
+                        <p>"I've had chronic back pain for over 20 years. I tried everything physio, yoga, imaging, injections. Nothing worked until SoftWave. Bill is kind, clear, and knows what he's doing. I'm finally able to move without pain again."</p>
+                    </blockquote>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card rounded-lg shadow-md overflow-hidden p-6 backdrop-blur-sm">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=80" alt="M.P.">
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-serif font-medium text-gray-900">M.P., Los Angeles</h3>
+                            <div class="flex mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
                             </div>
                         </div>
-                        
-                        <div class="familiar-item flex items-start">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-4">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <div>
-                                <p class="text-gray-700">"When I ask for help, I'm told 'just tell me what to do' — which is just more mental work for me."</p>
+                    </div>
+                    <blockquote class="mt-4 text-gray-600">
+                        <p>"The sessions were quick, and I felt a huge difference in just a few visits. It was like my shoulder finally remembered how to heal."</p>
+                    </blockquote>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card rounded-lg shadow-md overflow-hidden p-6 backdrop-blur-sm">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=80" alt="S.T.">
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-serif font-medium text-gray-900">S.T., Studio City</h3>
+                            <div class="flex mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
                             </div>
                         </div>
-                        
-                        <div class="familiar-item flex items-start">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 mr-4">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <div>
-                                <p class="text-gray-700">"I've stopped making plans with friends because I know I'll have to cancel when something comes up with the kids."</p>
-                            </div>
+                    </div>
+                    <blockquote class="mt-4 text-gray-600">
+                        <p>"Bill really listens. He's not just pushing treatment he wants what's best for you. I felt safe, heard, and healed."</p>
+                    </blockquote>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <div class="space-x-4">
+                    <a href="#" class="btn-primary inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-700 hover:bg-green-600">
+                        Read More Stories
+                    </a>
+                    <a href="#" class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-green-700 bg-white hover:bg-gray-50">
+                        Submit Your Story
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div id="faq" class="py-12 px-4 sm:px-6 lg:py-16 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center">
+                <h2 class="text-3xl font-serif font-bold text-gray-900 sm:text-4xl">
+                    Frequently Asked Questions
+                </h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-600 sm:mt-4">
+                    Everything you need to know about SoftWave Therapy
+                </p>
+            </div>
+            
+            <div class="mt-12 max-w-3xl mx-auto">
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-serif font-medium text-gray-900">What is SoftWave Therapy?</h3>
+                        <p class="mt-2 text-gray-600">
+                            SoftWave Therapy is a non-invasive, FDA-cleared treatment that uses acoustic waves to stimulate healing at the cellular level. It helps reduce pain, improve circulation, and regenerate damaged tissue without surgery, medications, or downtime.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-serif font-medium text-gray-900">How does SoftWave work?</h3>
+                        <p class="mt-2 text-gray-600">
+                            SoftWave triggers a three-phase healing response:
+                        </p>
+                        <ul class="mt-2 space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <span class="text-green-600 font-medium mr-2">Physical</span> – Acoustic pressure waves penetrate the tissue.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 font-medium mr-2">Chemical</span> – These waves stimulate biochemical reactions, releasing healing molecules.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 font-medium mr-2">Biological</span> – Leads to increased blood vessel growth, reduced inflammation, and tissue regeneration.
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-serif font-medium text-gray-900">Is there a first-time client offer?</h3>
+                        <p class="mt-2 text-gray-600">
+                            Yes. Your first session—including consultation, mapping, and treatment—is available for $59 (regularly $300). This lets you try SoftWave Therapy with no pressure before considering further sessions.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-serif font-medium text-gray-900">Does SoftWave Therapy hurt?</h3>
+                        <p class="mt-2 text-gray-600">
+                            Most patients describe the sensation as a light tapping or pulsing. Some may feel mild discomfort in sensitive areas, which is usually well tolerated. Your provider can adjust the intensity for comfort.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="border-b border-gray-200 pb-6">
+                        <h3 class="text-lg font-serif font-medium text-gray-900">How many sessions will I need?</h3>
+                        <p class="mt-2 text-gray-600">
+                            Each session lasts about 5–15 minutes. Many patients feel relief after one session, though most conditions require a series of 4–8 treatments for optimal results.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="pb-6">
+                        <h3 class="text-lg font-serif font-medium text-gray-900">Who is not a candidate for SoftWave?</h3>
+                        <p class="mt-2 text-gray-600">
+                            SoftWave is not recommended for individuals who are:
+                        </p>
+                        <ul class="mt-2 space-y-1 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-2 mt-1"></i>
+                                <span>Pregnant</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-2 mt-1"></i>
+                                <span>Living with a pacemaker</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-2 mt-1"></i>
+                                <span>Diagnosed with active cancer near the treatment site</span>
+                            </li>
+                        </ul>
+                        <p class="mt-2 text-gray-600">
+                            Your provider will review your medical history during your first visit to determine eligibility.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="py-12 px-4 sm:px-6 lg:py-16 lg:px-8 bg-green-700 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+                <div>
+                    <h2 class="text-3xl font-serif font-bold sm:text-4xl">
+                        Ready to Feel Better?
+                    </h2>
+                    <p class="mt-4 text-lg text-[#e8f0e8]">
+                        Use our online tool to book your first session or free consultation.
+                    </p>
+                    
+                    <div class="mt-8">
+                        <div class="inline-flex rounded-md shadow">
+                            <a href="#" class="btn-primary inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-[#5a7d5a] bg-white hover:bg-gray-50">
+                                Book Now
+                            </a>
                         </div>
-                        
-                        <div class="familiar-item flex items-start">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-red-100 flex items-center justify-center text-red-600 mr-4">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <div>
-                                <p class="text-gray-700">"I feel guilty when I take time for myself because I know there are 50 things I should be doing instead."</p>
-                            </div>
+                        <div class="ml-3 inline-flex">
+                            <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-green-600">
+                                Free 10-Min Call
+                            </a>
                         </div>
                     </div>
                     
-                    <div class="mt-10 pt-6 border-t border-gray-200 text-center">
-                        <button class="btn-primary text-white px-6 py-3 rounded-md text-base font-medium">
-                            Get the Help You Deserve
-                        </button>
+                    <div class="mt-8">
+                        <h3 class="text-lg font-serif font-medium">Contact Us</h3>
+                        <div class="mt-4 space-y-2">
+                            <p class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-[#c8d8c8]"></i>
+                                <span>Studio City, CA</span>
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-phone-alt mt-1 mr-3 text-green-300"></i>
+                                <span>(XXX) XXX-XXXX</span>
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3 text-green-300"></i>
+                                <span>hello@softwavevitality.co</span>
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section id="how-it-works" class="py-20 px-6 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="serif text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                    How LtL Works
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Simple, intelligent assistance that actually lightens your load
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="mx-auto h-24 w-24 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-3xl mb-6">
-                        1
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Connect Your Accounts</h3>
-                    <p class="text-gray-600">
-                        Securely link your calendars, email, and household accounts. LtL only accesses what you allow.
-                    </p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="mx-auto h-24 w-24 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-3xl mb-6">
-                        2
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Set Your Preferences</h3>
-                    <p class="text-gray-600">
-                        Tell us your priorities, boundaries, and what kind of help would make the biggest difference.
-                    </p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="mx-auto h-24 w-24 rounded-full bg-green-100 flex items-center justify-center text-green-600 text-3xl mb-6">
-                        3
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Let LtL Handle It</h3>
-                    <p class="text-gray-600">
-                        Watch as tasks get completed, schedules get optimized, and your mental load lightens.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="mt-16 bg-gray-50 rounded-xl p-8 md:p-12">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                        <h3 class="serif text-2xl font-bold mb-4 text-gray-900">
-                            "LtL has given me back hours each week"
-                        </h3>
-                        <p class="text-gray-600 mb-6">
-                            Our early testers report saving 10-15 hours per week on average by letting LtL handle the invisible workload.
-                        </p>
-                        <button class="btn-primary text-white px-6 py-3 rounded-md text-base font-medium">
-                            Join the Waitlist
-                        </button>
-                    </div>
-                    <div class="md:w-1/2">
-                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                            <div class="flex items-center mb-4">
-                                <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
-                                    <i class="fas fa-calendar-check"></i>
-                                </div>
+                <div class="mt-12 lg:mt-0">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6 text-gray-800">
+                            <h3 class="text-xl font-serif font-medium">Book Your First Session</h3>
+                            <form class="mt-6 space-y-6">
                                 <div>
-                                    <h4 class="font-semibold">Calendar Optimization</h4>
-                                    <p class="text-sm text-gray-500">Completed automatically</p>
+                                    <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                    <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500">
                                 </div>
-                            </div>
-                            <div class="flex items-center mb-4">
-                                <div class="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-4">
-                                    <i class="fas fa-utensils"></i>
-                                </div>
+                                
                                 <div>
-                                    <h4 class="font-semibold">Meal Planning</h4>
-                                    <p class="text-sm text-gray-500">Completed automatically</p>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                    <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500">
                                 </div>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-4">
-                                    <i class="fas fa-child"></i>
-                                </div>
+                                
                                 <div>
-                                    <h4 class="font-semibold">Activity Coordination</h4>
-                                    <p class="text-sm text-gray-500">Completed automatically</p>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+                                    <input type="tel" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500">
                                 </div>
-                            </div>
+                                
+                                <div>
+                                    <label for="service" class="block text-sm font-medium text-gray-700">Service Interest</label>
+                                    <select id="service" name="service" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                        <option>First-Time Special ($59)</option>
+                                        <option>SoftWave Therapy</option>
+                                        <option>Consultation Only</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <button type="submit" class="btn-primary w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-700 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                                        Submit Request
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-20 px-6 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="serif text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                    What Default Parents Are Saying
+    <!-- Blog Preview Section -->
+    <div class="py-12 px-4 sm:px-6 lg:py-16 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center">
+                <h2 class="text-3xl font-serif font-bold text-gray-900 sm:text-4xl">
+                    Blog & Resources
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Real stories from parents who've gotten their lives back
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-600 sm:mt-4">
+                    Learn more about SoftWave therapy and pain management
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-sm hover-grow quote-card">
-                    <div class="flex items-center mb-6">
-                        <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold">Sarah, mom of 3</h4>
-                            <p class="text-sm text-gray-500">Ages 5, 7, and 9</p>
+            <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Blog Post 1 -->
+                <div class="bg-[#f8f5f0] rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-book-open text-4xl text-green-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-serif font-medium text-gray-900">What Is SoftWave Therapy? A Beginner's Guide</h3>
+                        <p class="mt-2 text-sm text-gray-600">Learn how this innovative treatment can help you heal naturally.</p>
+                        <div class="mt-4">
+                            <a href="#" class="text-sm font-medium text-green-700 hover:text-green-600">
+                                Read More <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic">
-                        "LtL has literally given me back my sanity. I didn't realize how much mental space was taken up by just remembering everything until I didn't have to anymore."
-                    </p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-xl shadow-sm hover-grow quote-card">
-                    <div class="flex items-center mb-6">
-                        <div class="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-4">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold">Michael, dad of twins</h4>
-                            <p class="text-sm text-gray-500">Ages 4</p>
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-syringe text-4xl text-green-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-serif font-medium text-gray-900">Can Acoustic Wave Therapy Replace Cortisone Shots?</h3>
+                        <p class="mt-2 text-sm text-gray-600">Comparing these two approaches to pain management.</p>
+                        <div class="mt-4">
+                            <a href="#" class="text-sm font-medium text-green-700 hover:text-green-600">
+                                Read More <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic">
-                        "As the default parent in our family, I was drowning. LtL doesn't just organize my tasks — it actually takes things off my plate completely. Game changer."
-                    </p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-xl shadow-sm hover-grow quote-card">
-                    <div class="flex items-center mb-6">
-                        <div class="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-4">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold">Priya, mom of 2</h4>
-                            <p class="text-sm text-gray-500">Ages 3 and 6</p>
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-user-md text-4xl text-green-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-serif font-medium text-gray-900">Bill's Story: From Injury to Innovation</h3>
+                        <p class="mt-2 text-sm text-gray-600">How one man's pain journey led to a new career in healing.</p>
+                        <div class="mt-4">
+                            <a href="#" class="text-sm font-medium text-green-700 hover:text-green-600">
+                                Read More <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic">
-                        "I finally have time to read a book or take a bath without feeling guilty. LtL handles so much of the invisible work that no one sees but that was consuming my life."
-                    </p>
+                </div>
+                
+                <!-- Blog Post 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-shoe-prints text-4xl text-green-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-serif font-medium text-gray-900">Healing Plantar Fasciitis Without Surgery</h3>
+                        <p class="mt-2 text-sm text-gray-600">A non-invasive approach to foot pain relief.</p>
+                        <div class="mt-4">
+                            <a href="#" class="text-sm font-medium text-green-700 hover:text-green-600">
+                                Read More <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <div class="space-x-4">
+                    <a href="#" class="btn-primary inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-700 hover:bg-green-600">
+                        Visit Blog
+                    </a>
+                    <a href="#" class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-green-700 bg-white hover:bg-gray-50">
+                        Sign Up for Our Newsletter
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Waitlist CTA -->
-    <section id="waitlist" class="py-20 px-6 bg-blue-600 text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="serif text-3xl md:text-4xl font-bold mb-6">
-                Ready to Lighten Your Load?
-            </h2>
-            <p class="text-xl mb-10 max-w-2xl mx-auto">
-                Join our waitlist and be the first to access LtL when we launch. Early members get special pricing.
-            </p>
-            
-            <div class="max-w-md mx-auto">
-                <form class="space-y-4">
-                    <div>
-                        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-md text-gray-900">
-                    </div>
-                    <div>
-                        <input type="email" placeholder="Email Address" class="w-full px-4 py-3 rounded-md text-gray-900">
-                    </div>
-                    <div>
-                        <button type="submit" class="w-full bg-white text-blue-600 px-6 py-4 rounded-md text-lg font-medium hover-grow">
-                            Join the Waitlist
-                        </button>
-                    </div>
-                </form>
-                
-                <p class="mt-6 text-blue-100 text-sm">
-                    We respect your privacy. Your information will never be shared.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="py-20 px-6 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="serif text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                    Frequently Asked Questions
-                </h2>
-                <p class="text-xl text-gray-600">
-                    Everything you need to know about LtL
-                </p>
-            </div>
-            
-            <div class="space-y-4">
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-                        <h3 class="font-semibold text-lg">How is LtL different from other productivity apps?</h3>
-                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                    </button>
-                    <div class="dropdown-content px-6 pb-6">
-                        <p class="text-gray-600">
-                            LtL isn't just another to-do list or calendar app. While those tools help you organize your tasks, LtL actually takes tasks off your plate completely by handling coordination, scheduling, and communication automatically. We focus on reducing your mental load, not just organizing it.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-                        <h3 class="font-semibold text-lg">Is my data secure with LtL?</h3>
-                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                    </button>
-                    <div class="dropdown-content px-6 pb-6">
-                        <p class="text-gray-600">
-                            Absolutely. We use bank-level encryption and never store your passwords. You have complete control over what accounts LtL can access, and you can revoke access at any time. We take your privacy and security extremely seriously.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-                        <h3 class="font-semibold text-lg">When will LtL be available?</h3>
-                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                    </button>
-                    <div class="dropdown-content px-6 pb-6">
-                        <p class="text-gray-600">
-                            We're currently in private beta with plans to launch publicly later this year. Join our waitlist to get early access and special pricing as we roll out to more users.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 rounded-lg overflow-hidden">
-                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-                        <h3 class="font-semibold text-lg">How much does LtL cost?</h3>
-                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                    </button>
-                    <div class="dropdown-content px-6 pb-6">
-                        <p class="text-gray-600">
-                            Pricing starts at $19/month, with discounts for annual plans. Early waitlist members will receive special introductory pricing. We believe the time and mental energy LtL saves is worth much more than the subscription cost.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="serif text-xl font-bold mb-4">LtL</h3>
-                    <p class="text-gray-400">
-                        Real help for the default parent. Lightening your load so you can enjoy your life.
+    <footer class="bg-gray-50">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="space-y-8 xl:col-span-1">
+                    <span class="text-2xl font-serif text-green-800">SoftWave<span class="font-light">Vitality</span></span>
+                    <p class="text-gray-500 text-base">
+                        California's premier SoftWave therapy clinic dedicated to non-invasive pain relief and healing.
                     </p>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Product</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Features</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">How It Works</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Waitlist</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Company</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Connect</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-linkedin-in"></i></a>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-green-600">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-600">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-600">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-600">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
-                    <div class="mt-6">
-                        <button class="btn-secondary px-6 py-2 rounded-md text-sm font-medium">
-                            Get Early Access
-                        </button>
+                </div>
+                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-serif font-semibold text-gray-900 tracking-wider uppercase">
+                                Navigation
+                            </h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-500 hover:text-green-600">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#treatments" class="text-base text-gray-500 hover:text-green-600">
+                                        Treatments
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#about" class="text-base text-gray-500 hover:text-green-600">
+                                        About
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#testimonials" class="text-base text-gray-500 hover:text-green-600">
+                                        Testimonials
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-12 md:mt-0">
+                            <h3 class="text-sm font-serif font-semibold text-gray-900 tracking-wider uppercase">
+                                Resources
+                            </h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#faq" class="text-base text-gray-500 hover:text-green-600">
+                                        FAQ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-500 hover:text-green-600">
+                                        Research
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-500 hover:text-green-600">
+                                        Blog
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#contact" class="text-base text-gray-500 hover:text-green-600">
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-serif font-semibold text-gray-900 tracking-wider uppercase">
+                                Contact
+                            </h3>
+                            <ul class="mt-4 space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt mt-1 mr-2 text-green-600"></i>
+                                    <span class="text-base text-gray-500">Studio City, CA</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-phone-alt mt-1 mr-2 text-green-600"></i>
+                                    <span class="text-base text-gray-500">(XXX) XXX-XXXX</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-envelope mt-1 mr-2 text-green-600"></i>
+                                    <span class="text-base text-gray-500">hello@softwavevitality.co</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-12 md:mt-0">
+                            <h3 class="text-sm font-serif font-semibold text-gray-900 tracking-wider uppercase">
+                                Hours
+                            </h3>
+                            <ul class="mt-4 space-y-4">
+                                <li class="text-base text-gray-500">
+                                    Monday - Friday: 9am - 6pm
+                                </li>
+                                <li class="text-base text-gray-500">
+                                    Saturday: 10am - 4pm
+                                </li>
+                                <li class="text-base text-gray-500">
+                                    Sunday: Closed
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">
-                    © 2023 LtL. All rights reserved.
+            <div class="mt-12 border-t border-gray-200 pt-8">
+                <p class="text-base text-gray-400 text-center">
+                    &copy; 2023 SoftWave Vitality. All rights reserved.
                 </p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
-                </div>
             </div>
         </div>
     </footer>
@@ -657,58 +959,48 @@
         // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-
-        // FAQ accordion
-        document.querySelectorAll('.faq-toggle').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                const icon = button.querySelector('i');
-                
-                content.classList.toggle('show');
-                icon.classList.toggle('rotate-180');
-            });
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.classList.add('block');
+            } else {
+                menu.classList.remove('block');
+                menu.classList.add('hidden');
+            }
         });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+                if (targetId === '#') return;
                 
+                const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    
                     // Close mobile menu if open
                     const mobileMenu = document.getElementById('mobile-menu');
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                     }
+                    
+                    // Scroll to target
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
 
-        // Animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.fade-in');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if (elementPosition < screenPosition) {
-                    element.classList.add('fade-in');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
     </script>
 </body>
 </html>
